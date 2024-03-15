@@ -27,6 +27,7 @@ STOCK_CONTAINERD=$1
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ROOT="$( cd $DIR && cd .. && cd .. && pwd)"
 
+sudo mkdir -p /etc/systemd/system/kubelet.service.d
 # Create kubelet service
 sudo sh -c 'cat <<EOF > /etc/systemd/system/kubelet.service.d/0-containerd.conf
 [Service]                                                 
