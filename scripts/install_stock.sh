@@ -76,17 +76,17 @@ sudo apt-get -y install cri-tools ebtables ethtool kubeadm=$K8S_VERSION kubectl=
 
 
 # Copy CNI configs
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-ROOT="$( cd $DIR && cd .. && pwd)"
-CNICONFIGS=$ROOT/configs/cni
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+# ROOT="$( cd $DIR && cd .. && pwd)"
+# CNICONFIGS=$ROOT/configs/cni
 
-#DST=/etc/cni/net.d
-sudo mkdir -p $DST
+# #DST=/etc/cni/net.d
+# sudo mkdir -p $DST
 
-for CONFIG in 10-bridge.conf
-do
-  sudo cp $CNICONFIGS/$CONFIG $DST
-done
+# for CONFIG in 10-bridge.conf
+# do
+#   sudo cp $CNICONFIGS/$CONFIG $DST
+# done
 
 # Install knative CLI
 KNATIVE_VERSION="release-1.3"
